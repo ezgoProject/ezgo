@@ -9,10 +9,10 @@ grade: devel
 confinement: strict
 
 apps:
-    monerod:
+    ezgod:
         daemon: forking
         command: |
-          monerod-wrapper --detach --data-dir ${SNAP_COMMON} --config-file ${SNAP_USER_DATA}/etc/monerod.conf
+          ezgod-wrapper --detach --data-dir ${SNAP_COMMON} --config-file ${SNAP_USER_DATA}/etc/ezgod.conf
         plugs:
             - network
             - network-bind
@@ -71,8 +71,8 @@ parts:
         plugin: dump
         source: .
         organize:
-            contrib/snap/monerod.conf: etc/monerod.conf
-            contrib/snap/monerod-wrapper: bin/monerod-wrapper
+            contrib/snap/ezgod.conf: etc/ezgod.conf
+            contrib/snap/ezgod-wrapper: bin/ezgod-wrapper
         prime:
             - etc
             - bin
